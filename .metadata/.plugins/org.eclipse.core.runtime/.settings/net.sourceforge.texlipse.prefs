@@ -1,0 +1,14 @@
+#Wed Nov 13 13:40:59 EST 2013
+num.TexColor=255,205,139
+def.BibColor=207,191,173
+key.BibColor=128,139,237
+typ.BibColor=135,206,250
+str.BibColor=255,205,139
+equ.TexColor=255,205,139
+def.TexColor=207,191,173
+slc.BibColor=205,139,0
+verb.TexColor=207,191,173
+crl.TexColor=207,191,173
+eclipse.preferences.version=1
+cmd.TexColor=135,206,250
+com.TexColor=205,139,0
