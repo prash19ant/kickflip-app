@@ -1,0 +1,12 @@
+package
+{
+	import flash.display.Sprite;
+	
+	public class FlipPublisher extends Sprite
+	{
+		public function FlipPublisher()
+		{
+			
+		}
+	}
+}
