@@ -3,13 +3,16 @@ package flippub.app
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	
-	import flippub.app.event.AppEvent;
 	import flippub.app.event.ConfigReaderEvent;
 	import flippub.app.setting.reader.ConfigReader;
 	import flippub.app.util.logger.Log;
+	
+	import org.osflash.signals.Signal;
 
 	public class AppConfig extends EventDispatcher
 	{
+		public var onReady:Signal = new Signal();
+		
 		public function AppConfig()
 		{
 			super();
@@ -34,7 +37,7 @@ package flippub.app
 				if(Object(AppGlobal).hasOwnProperty(key))
 					AppGlobal[key] = configData[key];
 			}
-			dispatchEvent(new Event(AppEvent.CONFIG_READY));
+			onReady.dispatch();
 		}
 	}
 }
