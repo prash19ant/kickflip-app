@@ -5,6 +5,7 @@ package
 	import flash.display.StageScaleMode;
 	
 	import flippub.app.AppGlobal;
+	import flippub.flip.view.MainView;
 	
 	[SWF(width='700',height='400', backgroundColor='#ffffff', frameRate='60')]
 	public class FlipPublisher extends Sprite
@@ -29,7 +30,7 @@ package
 		
 		private function globalReadyHandler():void
 		{
-			//addChild(new MainView());
+			addChild(new MainView());
 		}
 	}
 }
