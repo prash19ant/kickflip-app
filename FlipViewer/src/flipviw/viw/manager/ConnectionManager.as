@@ -1,4 +1,4 @@
-package flippub.flip.manager
+package flipviw.viw.manager
 {
 	import com.greensock.TweenLite;
 	
@@ -8,8 +8,8 @@ package flippub.flip.manager
 	import flash.net.NetStream;
 	import flash.net.ObjectEncoding;
 	
-	import flippub.app.AppGlobal;
-	import flippub.app.control.Alert;
+	import flipviw.app.AppGlobal;
+	import flipviw.app.control.Alert;
 	
 	import org.osflash.signals.Signal;
 
@@ -18,7 +18,7 @@ package flippub.flip.manager
 		private var netConn:NetConnection;
 		private var stream:NetStream;
 		public var onSuccess:Signal = new Signal();
-
+		
 		public function ConnectionManager()
 		{
 			netConn = new NetConnection();
@@ -28,7 +28,7 @@ package flippub.flip.manager
 			netConn.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
 			netConn.connect(AppGlobal.MEDIA_SERVER_RMTP);
 		}
-
+		
 		public function netStatusHandler(evt:NetStatusEvent):void
 		{
 			switch(evt.info.code)
@@ -51,7 +51,7 @@ package flippub.flip.manager
 				}
 			}
 		}
-
+		
 		private function showSuccess():void
 		{
 			var alert:Alert = Alert.show("Connected");
@@ -70,7 +70,7 @@ package flippub.flip.manager
 			stream = new NetStream(netConn);
 			stream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
 			stream.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
-
+			
 			onSuccess.dispatch();
 		}
 		
@@ -78,17 +78,17 @@ package flippub.flip.manager
 		{
 			trace("[ASYNC_ERROR]"+ evt.error.message);
 		}
-
+		
 		public function getStream():NetStream
 		{
 			return stream;
 		}
-
+		
 		public function setClientId(id:int):void
 		{
 			trace("[setClientId].id["+ id +"]");
 		}
-		
+
 		public function clientConnected(id:int):void
 		{
 			trace("[clientConnected].id["+ id +"]");

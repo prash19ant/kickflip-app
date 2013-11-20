@@ -6,6 +6,7 @@ package flippub.flip.control
 	import flash.media.Video;
 	import flash.net.NetStream;
 	
+	import flippub.app.AppGlobal;
 	import flippub.app.control.Alert;
 	import flippub.app.util.logger.Log;
 	
@@ -31,7 +32,7 @@ package flippub.flip.control
 				return;
 			}
 			
-			camera.setMode(619, 468, 25, false);
+			camera.setMode(appWidth, appHeight, 25, false);
 			camera.setQuality(0, 75);
 
 			netStream = netstream;
@@ -48,7 +49,7 @@ package flippub.flip.control
 		{
 			try
 			{
-				netStream.publish("","live");
+				netStream.publish(AppGlobal.DEFAULT_STREAM_NAME, "live");
 			} catch(err:Error)
 			{
 				Log.Error("CameraClient.publish.error netStream probably camera not found.");
