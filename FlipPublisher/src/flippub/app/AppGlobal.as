@@ -19,6 +19,7 @@ package flippub.app
 		public static var URL_SERVER:String = null;
 		public static var DataServiceEndPoint:String = "";
 		public static var backgroundImagePath:String = "images/background.jpg";
+		public static var MEDIA_SERVER_RMTP:String = "rtmp://localhost:2037/MediaTriggerService/";
 		
 		public static const DEFAULT_WIDTH:uint = 700;
 		public static const DEFAULT_HEIGHT:uint = 400;

@@ -34,7 +34,7 @@ package flippub.flip.view
 			var btnWidth:uint = 200;
 			var btnHeight:uint = 40;
 			playButton = new CoolButton("Play", btnWidth, btnHeight);
-			playButton.onClick.add(playClick);
+			playButton.onClick.add(playClickHandler);
 			playButton.x = viewWidth/2 - btnWidth/2;
 			playButton.y = posy; posy += btnHeight + gapy;
 			panel.addChild(playButton);
@@ -42,7 +42,7 @@ package flippub.flip.view
 			centerSprite(this);
 		}
 		
-		private function playClick():void
+		private function playClickHandler():void
 		{
 			onMenuClick.dispatch(PLAY_MENU);
 		}

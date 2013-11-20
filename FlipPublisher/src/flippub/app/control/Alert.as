@@ -43,7 +43,7 @@ package flippub.app.control
 		private var hideEffect:uint = GlideHideEffect;
 		private var isConfirmDialog:Boolean = false;
 		private var rounded:uint = 17;
-		private var buttonFontSize:uint = 28;
+		private var buttonFontSize:uint = 20;
 		
 		public function Alert()
 		{
@@ -239,12 +239,12 @@ package flippub.app.control
 			var color:uint = (config.color != undefined)?config.color:0xffffff;
 			var wordWrap:Boolean = (config.wordWrap != undefined)?config.wordWrap:true;
 			var format:TextFormat = new TextFormat();
-			format.font = FontManager.instance.TradeGothicLgCn;
+			format.font = "Arial";
 			format.color = color;
-			format.size = 25;
+			format.size = 20;
 			format.align = "center";
 			var txt:TextField = new TextField();
-			txt.embedFonts = true;
+			txt.embedFonts = false;
 			txt.selectable = false;
 			txt.width = width;
 			txt.height = height;
@@ -274,7 +274,7 @@ package flippub.app.control
 			});
 		}
 		
-		private function panelHide(delayfnc:Function = null):void
+		public function panelHide(delayfnc:Function = null):void
 		{
 			switch(hideEffect)
 			{
