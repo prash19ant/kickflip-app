@@ -1,8 +1,13 @@
 package flipviw.viw.control
 {
 	import flash.display.Sprite;
+	import flash.events.AsyncErrorEvent;
+	import flash.events.NetStatusEvent;
 	import flash.media.Video;
 	import flash.net.NetStream;
+	
+	import flipviw.app.AppGlobal;
+	import flipviw.app.control.Alert;
 	
 	public class VideoWatcher extends Sprite
 	{
@@ -26,6 +31,8 @@ package flipviw.viw.control
 			video.width = appWidth;
 			video.height = appHeight;
 			addChild(video);
+			
+			netStream.play(AppGlobal.DEFAULT_STREAM_NAME);
 		}
 	}
 }
