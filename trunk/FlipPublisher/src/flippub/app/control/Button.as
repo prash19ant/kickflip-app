@@ -136,7 +136,7 @@ package flippub.app.control
 			var height:uint = (config.height != undefined)?config.height:22;
 			var color:uint = (config.color != undefined)?config.color:0xffffff;
 			var format:TextFormat = new TextFormat();
-			format.font = FontManager.instance.TradeGothicLgCn;
+			format.font = "Arial";
 			format.color = color;
 			format.size = fontSize;
 			format.align = "center";
@@ -144,7 +144,7 @@ package flippub.app.control
 			var txt:TextField = new TextField();
 			txt.selectable = false;
 			txt.defaultTextFormat = format;
-			txt.embedFonts = true;
+			txt.embedFonts = false;
 			
 			txt.text = text;
 			txt.autoSize = TextFieldAutoSize.LEFT;
