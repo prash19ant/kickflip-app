@@ -1,12 +1,12 @@
-package flippub.app
+package flipviw.app
 {
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	
-	import flippub.app.control.Alert;
-	import flippub.app.setting.event.ReaderEvent;
-	import flippub.app.util.logger.Log;
+	import flipviw.app.control.Alert;
+	import flipviw.app.setting.event.ReaderEvent;
+	import flipviw.app.util.logger.Log;
 	
 	import org.osflash.signals.Signal;
 

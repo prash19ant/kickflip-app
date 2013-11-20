@@ -1,18 +1,17 @@
-package flippub.flip.view
+package flipviw.viw.view
 {
 	import flash.events.Event;
-	import flash.media.Camera;
 	
-	import flippub.app.control.CoolButton;
-	import flippub.flip.control.CameraControl;
-	import flippub.flip.manager.ConnectionManager;
-	import flippub.flip.mediator.PlayViewMediator;
+	import flipviw.app.control.CoolButton;
+	import flipviw.viw.control.VideoWatcher;
+	import flipviw.viw.manager.ConnectionManager;
+	import flipviw.viw.mediator.PlayViewMediator;
 
 	public class PlayView extends View
 	{
 		private var mediator:PlayViewMediator;
 		private var quitButton:CoolButton;
-		private var camera:CameraControl;
+		private var watcher:VideoWatcher;
 		private var connManager:ConnectionManager;
 		
 		public function PlayView()
@@ -28,7 +27,7 @@ package flippub.flip.view
 			mediator.init();
 			initContent();
 		}
-
+		
 		private function initContent():void
 		{
 			panel = getBasePanel();
@@ -37,14 +36,14 @@ package flippub.flip.view
 			var gapy:uint = 40;
 			var posy:uint = 10;
 			
-			camera = new CameraControl();
-			panel.addChild(camera);
-			camera.x = viewWidth/2 - camera.appWidth/2 
-			camera.y = posy; posy += camera.appHeight + 5;
-
 			connManager = new ConnectionManager();
 			connManager.onSuccess.add(connectionHandler);
-
+			
+			watcher = new VideoWatcher();
+			panel.addChild(watcher);
+			watcher.x = viewWidth/2 - watcher.appWidth/2 
+			watcher.y = posy; posy += watcher.appHeight + 5;
+			
 			var btnWidth:uint = 200;
 			var btnHeight:uint = 40;
 			quitButton = new CoolButton("Close", btnWidth, btnHeight);
@@ -56,7 +55,7 @@ package flippub.flip.view
 			
 			centerSprite(this);
 		}
-
+		
 		private function quitClickHandler():void
 		{
 			onMenuClick.dispatch(HOME_MENU);
@@ -64,7 +63,7 @@ package flippub.flip.view
 		
 		private function connectionHandler():void
 		{
-			camera.setStream(connManager.getStream());
+			watcher.setStream(connManager.getStream());
 		}
 	}
 }

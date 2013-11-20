@@ -6,13 +6,13 @@ package
 	import flash.display.StageScaleMode;
 	import flash.geom.Rectangle;
 	
-	import flippub.app.AppGlobal;
-	import flippub.flip.view.MainView;
+	import flipviw.app.AppGlobal;
+	import flipviw.viw.view.MainView;
 	
 	[SWF(width='700',height='400', backgroundColor='#ffffff', frameRate='60')]
-	public class FlipPublisher extends Sprite
+	public class FlipViewer extends Sprite
 	{
-		public function FlipPublisher()
+		public function FlipViewer()
 		{
 			if(stage!=null)
 			{
