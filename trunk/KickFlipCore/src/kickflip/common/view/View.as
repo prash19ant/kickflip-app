@@ -1,4 +1,4 @@
-package flipviw.viw.view
+package kickflip.common.view
 {
 	import com.greensock.TweenLite;
 	import com.greensock.TweenMax;
@@ -32,8 +32,8 @@ package flipviw.viw.view
 	
 	public class View extends Sprite
 	{
-		public static const HOME_MENU:String = "home";
-		public static const PLAY_MENU:String = "play";
+		public static const HOME_MENU:String = "homeView";
+		public static const PLAY_MENU:String = "playView";
 		private static const VIEW_WIDTH_NAME:String = "viewWidth";
 		private static const VIEW_HEIGHT_NAME:String = "viewHeight";
 		

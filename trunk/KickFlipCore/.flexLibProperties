@@ -16,6 +16,7 @@
     <classEntry path="kickflip.app.util.logger.Level"/>
     <classEntry path="kickflip.app.util.logger.Log"/>
     <classEntry path="kickflip.common.manager.ConnectionManager"/>
+    <classEntry path="kickflip.common.view.View"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

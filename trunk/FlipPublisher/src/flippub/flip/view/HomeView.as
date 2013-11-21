@@ -5,6 +5,7 @@ package flippub.flip.view
 	import flippub.flip.mediator.HomeViewMediator;
 	
 	import kickflip.app.control.CoolButton;
+	import kickflip.common.view.View;
 
 	public class HomeView extends View
 	{

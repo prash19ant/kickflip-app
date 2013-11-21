@@ -3,6 +3,8 @@ package flipviw.viw.view
 	import flash.events.Event;
 	
 	import flipviw.viw.mediator.MainViewMediator;
+	
+	import kickflip.common.view.View;
 
 	public class MainView extends View
 	{
