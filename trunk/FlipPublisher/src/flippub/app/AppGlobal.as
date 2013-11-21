@@ -15,7 +15,7 @@ package flippub.app
 		public static var AdminDebug:Boolean = true;
 		public static var PathConfig:String = "config.xml";
 		public static const VERSION:String = "0.0.1";
-		private static var DEFAULT_URL_SERVER:String = "http://localhost/QuizService/";
+		private static var DEFAULT_URL_SERVER:String = "http://localhost/";
 		public static var URL_SERVER:String = null;
 		public static var DataServiceEndPoint:String = "";
 		public static var backgroundImagePath:String = "images/background.jpg";
