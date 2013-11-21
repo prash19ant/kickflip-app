@@ -2,8 +2,9 @@ package flipviw.viw.view
 {
 	import flash.events.Event;
 	
-	import flipviw.app.control.CoolButton;
 	import flipviw.viw.mediator.HomeViewMediator;
+	
+	import kickflip.app.control.CoolButton;
 
 	public class HomeView extends View
 	{

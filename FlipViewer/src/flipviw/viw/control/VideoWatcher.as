@@ -2,29 +2,44 @@ package flipviw.viw.control
 {
 	import flash.display.Sprite;
 	import flash.events.AsyncErrorEvent;
+	import flash.events.Event;
 	import flash.events.NetStatusEvent;
 	import flash.media.Video;
 	import flash.net.NetStream;
 	
-	import flipviw.app.AppGlobal;
-	import flipviw.app.control.Alert;
+	import kickflip.app.AppGlobal;
+	import kickflip.common.manager.ConnectionManager;
 	
 	public class VideoWatcher extends Sprite
 	{
 		public var appWidth:uint = 400;
 		public var appHeight:uint = 350;
 		private var video:Video;
+		private var connManager:ConnectionManager;
 		private var netStream:NetStream;
 
 		public function VideoWatcher()
 		{
 			super();
+			addEventListener(Event.ADDED_TO_STAGE, initStage);
 		}
 		
-		public function setStream(netstream:NetStream):void
+		private function initStage(evt:Event):void
 		{
-			trace("[setStream]");
-			netStream = netstream;
+			removeEventListener(Event.ADDED_TO_STAGE, initStage);
+			connManager = new ConnectionManager();
+			connManager.onSuccess.add(connectionHandler);
+		}
+		
+		private function connectionHandler():void
+		{
+			netStream = connManager.getStream();
+			initContent();
+		}
+
+		private function initContent():void
+		{
+			trace("[initContent]");
 			
 			video = new Video();
 			video.attachNetStream(netStream);

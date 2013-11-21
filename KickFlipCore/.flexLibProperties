@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
-  <includeClasses/>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="kickflip.app.AppGlobal"/>
+    <classEntry path="kickflip.app.AppText"/>
+    <classEntry path="kickflip.app.setting.event.ReaderEvent"/>
+    <classEntry path="kickflip.app.setting.parser.Parser"/>
+    <classEntry path="kickflip.app.setting.reader.ConfigReader"/>
+    <classEntry path="kickflip.app.translator.ServiceTranslator"/>
+    <classEntry path="kickflip.app.translator.Translator"/>
+    <classEntry path="kickflip.app.util.BMPFunctions"/>
+    <classEntry path="kickflip.app.util.FormUtil"/>
+    <classEntry path="kickflip.app.util.GlideTransition"/>
+    <classEntry path="kickflip.app.util.TransitionView"/>
+    <classEntry path="kickflip.app.util.Util"/>
+    <classEntry path="kickflip.app.util.logger.Level"/>
+    <classEntry path="kickflip.app.util.logger.Log"/>
+    <classEntry path="kickflip.common.manager.ConnectionManager"/>
+  </includeClasses>
   <includeResources/>
   <namespaceManifests/>
 </flexLibProperties>

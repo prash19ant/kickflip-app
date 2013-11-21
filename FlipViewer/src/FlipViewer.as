@@ -6,8 +6,9 @@ package
 	import flash.display.StageScaleMode;
 	import flash.geom.Rectangle;
 	
-	import flipviw.app.AppGlobal;
 	import flipviw.viw.view.MainView;
+	
+	import kickflip.app.AppGlobal;
 	
 	[SWF(width='700',height='400', backgroundColor='#ffffff', frameRate='60')]
 	public class FlipViewer extends Sprite

@@ -6,9 +6,9 @@ package flippub.flip.control
 	import flash.media.Video;
 	import flash.net.NetStream;
 	
-	import flippub.app.AppGlobal;
-	import flippub.app.control.Alert;
-	import flippub.app.util.logger.Log;
+	import kickflip.app.AppGlobal;
+	import kickflip.app.control.Alert;
+	import kickflip.common.manager.ConnectionManager;
 	
 	public class CameraControl extends Sprite
 	{
@@ -16,26 +16,40 @@ package flippub.flip.control
 		public var appHeight:uint = 350;
 		private var video:Video;
 		private var camera:Camera;
+		private var connManager:ConnectionManager;
 		private var netStream:NetStream;
 
 		public function CameraControl()
 		{
 			super();
+			addEventListener(Event.ADDED_TO_STAGE, initStage);
+		}
+		
+		private function initStage(evt:Event):void
+		{
+			removeEventListener(Event.ADDED_TO_STAGE, initStage);
+			connManager = new ConnectionManager();
+			connManager.onSuccess.add(connectionHandler);
 		}
 
-		public function setStream(netstream:NetStream):void
+		private function connectionHandler():void
 		{
-			camera = Camera.getCamera();
+			netStream = connManager.getStream();
+			initContent();
+		}
+
+		private function initContent():void
+		{
+			camera = Camera.getCamera("0");
 			if(camera == null)
 			{
-				Alert.show("CameraClient.setStream > Camera not found");
+				Alert.show("CameraControl.setStream > Camera not found");
 				return;
 			}
 			
 			camera.setMode(appWidth, appHeight, 25, false);
 			camera.setQuality(0, 75);
 
-			netStream = netstream;
 			netStream.attachCamera(camera);
 
 			video = new Video();
@@ -43,27 +57,29 @@ package flippub.flip.control
 			video.width = appWidth;
 			video.height = appHeight;
 			addChild(video);
+			
+			publish();
 		}
 		
-		public function publish():void
+		private function publish():void
 		{
 			try
 			{
 				netStream.publish(AppGlobal.DEFAULT_STREAM_NAME, "live");
 			} catch(err:Error)
 			{
-				Log.Error("CameraClient.publish.error netStream probably camera not found.");
+				trace("CameraControl.publish.error netStream probably camera not found.");
 			}
 		}
 
-		public function unpublish():void
+		private function unpublish():void
 		{
 			try
 			{
 				netStream.close();
 			} catch(err:Error)
 			{
-				Log.Error("CameraClient.unpublish.error netStream probably not open.");
+				trace("CameraControl.unpublish.error netStream probably not open.");
 			}
 		}
 
