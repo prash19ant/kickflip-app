@@ -6,6 +6,7 @@ package flipviw.viw.view
 	import flipviw.viw.mediator.PlayViewMediator;
 	
 	import kickflip.app.control.CoolButton;
+	import kickflip.common.view.View;
 
 	public class PlayView extends View
 	{

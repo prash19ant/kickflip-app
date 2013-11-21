@@ -5,7 +5,8 @@ package flippub.flip.mediator
 	import flippub.flip.view.HomeView;
 	import flippub.flip.view.MainView;
 	import flippub.flip.view.PlayView;
-	import flippub.flip.view.View;
+	
+	import kickflip.common.view.View;
 
 	public class MainViewMediator
 	{

@@ -5,6 +5,7 @@ package flipviw.viw.view
 	import flipviw.viw.mediator.HomeViewMediator;
 	
 	import kickflip.app.control.CoolButton;
+	import kickflip.common.view.View;
 
 	public class HomeView extends View
 	{

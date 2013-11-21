@@ -8,6 +8,7 @@ package flippub.flip.view
 	
 	import kickflip.app.control.CoolButton;
 	import kickflip.common.manager.ConnectionManager;
+	import kickflip.common.view.View;
 
 	public class PlayView extends View
 	{

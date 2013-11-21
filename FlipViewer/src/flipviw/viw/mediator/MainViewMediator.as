@@ -5,7 +5,8 @@ package flipviw.viw.mediator
 	import flipviw.viw.view.HomeView;
 	import flipviw.viw.view.MainView;
 	import flipviw.viw.view.PlayView;
-	import flipviw.viw.view.View;
+	
+	import kickflip.common.view.View;
 
 	public class MainViewMediator
 	{

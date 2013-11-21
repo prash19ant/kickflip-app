@@ -3,6 +3,8 @@ package flippub.flip.view
 	import flash.events.Event;
 	
 	import flippub.flip.mediator.MainViewMediator;
+	
+	import kickflip.common.view.View;
 
 	public class MainView extends View
 	{
