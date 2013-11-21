@@ -24,13 +24,14 @@ package flippub.flip.manager
 			netConn = new NetConnection();
 			netConn.client = this;
 			netConn.objectEncoding = ObjectEncoding.AMF0;
-			trace("ServerSync["+ AppGlobal.MEDIA_SERVER_RMTP +"]");
+			trace("ConnectionManager["+ AppGlobal.MEDIA_SERVER_RMTP +"]");
 			netConn.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
 			netConn.connect(AppGlobal.MEDIA_SERVER_RMTP);
 		}
 
 		public function netStatusHandler(evt:NetStatusEvent):void
 		{
+			trace("ConnectionManager.evt.info.code["+ evt.info.code +"]");
 			switch(evt.info.code)
 			{
 				case "NetConnection.Connect.Success":
