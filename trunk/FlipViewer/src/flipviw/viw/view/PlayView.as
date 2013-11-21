@@ -2,17 +2,16 @@ package flipviw.viw.view
 {
 	import flash.events.Event;
 	
-	import flipviw.app.control.CoolButton;
 	import flipviw.viw.control.VideoWatcher;
-	import flipviw.viw.manager.ConnectionManager;
 	import flipviw.viw.mediator.PlayViewMediator;
+	
+	import kickflip.app.control.CoolButton;
 
 	public class PlayView extends View
 	{
 		private var mediator:PlayViewMediator;
 		private var quitButton:CoolButton;
 		private var watcher:VideoWatcher;
-		private var connManager:ConnectionManager;
 		
 		public function PlayView()
 		{
@@ -36,9 +35,6 @@ package flipviw.viw.view
 			var gapy:uint = 40;
 			var posy:uint = 10;
 			
-			connManager = new ConnectionManager();
-			connManager.onSuccess.add(connectionHandler);
-			
 			watcher = new VideoWatcher();
 			panel.addChild(watcher);
 			watcher.x = viewWidth/2 - watcher.appWidth/2 
@@ -59,11 +55,6 @@ package flipviw.viw.view
 		private function quitClickHandler():void
 		{
 			onMenuClick.dispatch(HOME_MENU);
-		}
-		
-		private function connectionHandler():void
-		{
-			watcher.setStream(connManager.getStream());
 		}
 	}
 }

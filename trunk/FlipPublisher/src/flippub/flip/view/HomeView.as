@@ -2,8 +2,9 @@ package flippub.flip.view
 {
 	import flash.events.Event;
 	
-	import flippub.app.control.CoolButton;
 	import flippub.flip.mediator.HomeViewMediator;
+	
+	import kickflip.app.control.CoolButton;
 
 	public class HomeView extends View
 	{

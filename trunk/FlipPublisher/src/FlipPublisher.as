@@ -6,8 +6,9 @@ package
 	import flash.display.StageScaleMode;
 	import flash.geom.Rectangle;
 	
-	import flippub.app.AppGlobal;
 	import flippub.flip.view.MainView;
+	
+	import kickflip.app.AppGlobal;
 	
 	[SWF(width='700',height='400', backgroundColor='#ffffff', frameRate='60')]
 	public class FlipPublisher extends Sprite

@@ -1,9 +1,5 @@
 package flippub.flip.view
 {
-	import flippub.app.AppGlobal;
-	import flippub.app.control.Alert;
-	import flippub.app.util.GlideTransition;
-	
 	import com.greensock.TweenLite;
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Circ;
@@ -28,6 +24,9 @@ package flippub.flip.view
 	import flash.net.navigateToURL;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
+	
+	import kickflip.app.AppGlobal;
+	import kickflip.app.util.GlideTransition;
 	
 	import org.osflash.signals.Signal;
 	

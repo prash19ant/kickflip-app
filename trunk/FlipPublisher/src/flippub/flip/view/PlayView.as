@@ -3,17 +3,17 @@ package flippub.flip.view
 	import flash.events.Event;
 	import flash.media.Camera;
 	
-	import flippub.app.control.CoolButton;
 	import flippub.flip.control.CameraControl;
-	import flippub.flip.manager.ConnectionManager;
 	import flippub.flip.mediator.PlayViewMediator;
+	
+	import kickflip.app.control.CoolButton;
+	import kickflip.common.manager.ConnectionManager;
 
 	public class PlayView extends View
 	{
 		private var mediator:PlayViewMediator;
 		private var quitButton:CoolButton;
 		private var camera:CameraControl;
-		private var connManager:ConnectionManager;
 		
 		public function PlayView()
 		{
@@ -42,9 +42,6 @@ package flippub.flip.view
 			camera.x = viewWidth/2 - camera.appWidth/2 
 			camera.y = posy; posy += camera.appHeight + 5;
 
-			connManager = new ConnectionManager();
-			connManager.onSuccess.add(connectionHandler);
-
 			var btnWidth:uint = 200;
 			var btnHeight:uint = 40;
 			quitButton = new CoolButton("Close", btnWidth, btnHeight);
@@ -60,11 +57,6 @@ package flippub.flip.view
 		private function quitClickHandler():void
 		{
 			onMenuClick.dispatch(HOME_MENU);
-		}
-		
-		private function connectionHandler():void
-		{
-			camera.setStream(connManager.getStream());
 		}
 	}
 }

@@ -25,8 +25,8 @@ package flipviw.viw.view
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	
-	import flipviw.app.AppGlobal;
-	import flipviw.app.util.GlideTransition;
+	import kickflip.app.AppGlobal;
+	import kickflip.app.util.GlideTransition;
 	
 	import org.osflash.signals.Signal;
 	
