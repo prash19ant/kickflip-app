@@ -20,7 +20,7 @@ package kickflip.app
 
 		public function init():void
 		{
-			var configReader:ConfigReader = new ConfigReader(AppGlobal.PathConfig);
+			var configReader:ConfigReader = new ConfigReader(AppGlobal.PATH_CONFIG);
 			configReader.addEventListener(ConfigReaderEvent.EVENT_XML_PARSED, setConfigData);
 			configReader.init();
 		}

@@ -54,8 +54,8 @@ package kickflip.common.view
 		
 		protected function getPanel():Sprite
 		{
-			viewWidth = AppGlobal.DEFAULT_WIDTH;
-			viewHeight = AppGlobal.DEFAULT_HEIGHT;
+			viewWidth = AppGlobal.defaultWidth;
+			viewHeight = AppGlobal.defaultHeight;
 			var base:Sprite = new Sprite();
 			//base.addChild(new backgroundClass() as Bitmap);
 			return base;
@@ -63,8 +63,8 @@ package kickflip.common.view
 		
 		protected function getBasePanel(path:String = null):Sprite
 		{
-			viewWidth = AppGlobal.DEFAULT_WIDTH;
-			viewHeight = AppGlobal.DEFAULT_HEIGHT;
+			viewWidth = AppGlobal.defaultWidth;
+			viewHeight = AppGlobal.defaultHeight;
 			if(path != null)
 			{
 				return buildImagePanel(path);

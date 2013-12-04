@@ -33,20 +33,20 @@ package kickflip.cam.view
 			panel = getBasePanel();
 			addChild(panel);
 			
-			var gapy:uint = 40;
-			var posy:uint = 10;
+			var gapy:uint = 5;
 			
 			camera = new CameraControl();
 			panel.addChild(camera);
 			camera.x = viewWidth/2 - camera.appWidth/2 
-			camera.y = posy; posy += camera.appHeight + 5;
+			var posy:uint = viewHeight/2 - camera.appHeight/2 - 20;
+			camera.y = posy; posy += camera.appHeight + gapy;
 
 			var btnWidth:uint = 200;
 			var btnHeight:uint = 40;
 			quitButton = new CoolButton("Close", btnWidth, btnHeight);
 			quitButton.onClick.add(quitClickHandler);
 			quitButton.x = viewWidth/2 - btnWidth/2;
-			quitButton.y = viewHeight - btnHeight - 5;
+			quitButton.y = posy;
 			panel.addChild(quitButton);
 			
 			centerSprite(this);
