@@ -15,7 +15,6 @@ package kickflip.app
 		public static const PATH_CONFIG:String = "config.xml";
 		public static const VERSION:String = "0.0.2";
 
-		public static var backgroundImagePath:String = "images/background.jpg";
 		public static const MEDIA_SERVER_RMTP:String = "rtmp://172.17.195.149:2037/MediaTriggerService/";
 		public static const DEFAULT_STREAM_NAME:String = "medialive";
 		
