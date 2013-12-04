@@ -44,11 +44,21 @@ package kickflip.common.manager
 					{
 						msg += key +":"+ evt.info[key] +"\r";
 					}
-					trace("[FAILED] "+ msg);
-					Alert.show("["+ AppGlobal.MEDIA_SERVER_RMTP +"]\r"+ msg);
+					displayError(msg);
+					break;
+				}
+				case "NetStream.Play.StreamNotFound":
+				{
+					displayError("NetStream.Play.StreamNotFound\rStreamName: "+ AppGlobal.DEFAULT_STREAM_NAME);
 					break;
 				}
 			}
+		}
+		
+		private function displayError(msg:String):void
+		{
+			trace("[FAILED] "+ msg);
+			Alert.show("["+ AppGlobal.MEDIA_SERVER_RMTP +"]\r"+ msg);
 		}
 		
 		private function showSuccess():void
@@ -78,7 +88,7 @@ package kickflip.common.manager
 			trace("[ASYNC_ERROR]"+ evt.error.message);
 		}
 		
-		public function getStream():NetStream
+		public function get CurrentNetStream():NetStream
 		{
 			return stream;
 		}

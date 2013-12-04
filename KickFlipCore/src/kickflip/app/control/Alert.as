@@ -206,7 +206,7 @@ package kickflip.app.control
 		private function getConfirmButton():Sprite
 		{
 			var btns:Sprite = new Sprite();
-			var btnWidth:uint = 160;
+			var btnWidth:uint = 180;
 			var btnheight:uint = 40;
 			var gapx:uint = 20;
 			var posx:uint = 0;
@@ -241,7 +241,7 @@ package kickflip.app.control
 			var format:TextFormat = new TextFormat();
 			format.font = "Arial";
 			format.color = color;
-			format.size = 20;
+			format.size = 18;
 			format.align = "center";
 			var txt:TextField = new TextField();
 			txt.embedFonts = false;

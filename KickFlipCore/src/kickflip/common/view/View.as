@@ -76,7 +76,7 @@ package kickflip.common.view
 		{
 			var base:Sprite = new Sprite();
 			var rounded:uint = 5;
-			base.graphics.beginFill(0xC7D2D6);
+			base.graphics.beginFill(0x888888);
 			base.graphics.drawRoundRect(0, 0, viewWidth, viewHeight, rounded, rounded);
 			base.graphics.endFill();
 			return base;

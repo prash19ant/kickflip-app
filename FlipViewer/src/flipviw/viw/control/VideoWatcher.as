@@ -33,7 +33,7 @@ package flipviw.viw.control
 		
 		private function connectionHandler():void
 		{
-			netStream = connManager.getStream();
+			netStream = connManager.CurrentNetStream;
 			initContent();
 		}
 
