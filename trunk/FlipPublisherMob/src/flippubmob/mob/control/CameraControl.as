@@ -34,7 +34,7 @@ package flippubmob.mob.control
 		
 		private function connectionHandler():void
 		{
-			netStream = connManager.getStream();
+			netStream = connManager.CurrentNetStream;
 			initContent();
 		}
 		

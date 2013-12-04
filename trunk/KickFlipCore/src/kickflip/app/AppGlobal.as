@@ -14,12 +14,12 @@ package kickflip.app
 	{
 		public static var AdminDebug:Boolean = true;
 		public static var PathConfig:String = "config.xml";
-		public static const VERSION:String = "0.0.1";
+		public static const VERSION:String = "0.0.2";
 		private static var DEFAULT_URL_SERVER:String = "http://localhost/";
 		public static var URL_SERVER:String = null;
 		public static var DataServiceEndPoint:String = "";
 		public static var backgroundImagePath:String = "images/background.jpg";
-		public static var MEDIA_SERVER_RMTP:String = "rtmp://localhost:2037/MediaTriggerService/";
+		public static var MEDIA_SERVER_RMTP:String = "rtmp://172.17.195.149:2037/MediaTriggerService/";
 		public static var DEFAULT_STREAM_NAME:String = "medialive";
 		
 		public static const DEFAULT_WIDTH:uint = 700;
