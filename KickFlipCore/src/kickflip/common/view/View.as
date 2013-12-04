@@ -32,6 +32,9 @@ package kickflip.common.view
 	
 	public class View extends Sprite
 	{
+		[Embed(source="./../../../../../resources/NessyLabs.png")]
+		private static var backgroundClass:Class;
+
 		public static const HOME_MENU:String = "homeView";
 		public static const PLAY_MENU:String = "playView";
 		private static const VIEW_WIDTH_NAME:String = "viewWidth";
@@ -57,7 +60,7 @@ package kickflip.common.view
 			viewWidth = AppGlobal.defaultWidth;
 			viewHeight = AppGlobal.defaultHeight;
 			var base:Sprite = new Sprite();
-			//base.addChild(new backgroundClass() as Bitmap);
+			base.addChild(new backgroundClass() as Bitmap);
 			return base;
 		}
 		
@@ -79,6 +82,10 @@ package kickflip.common.view
 			base.graphics.beginFill(0x888888);
 			base.graphics.drawRoundRect(0, 0, viewWidth, viewHeight, rounded, rounded);
 			base.graphics.endFill();
+			var bmp:Bitmap = new backgroundClass() as Bitmap;
+			base.addChild(bmp);
+			bmp.x = viewWidth/2 - bmp.width/2;
+			bmp.y = viewHeight/2 - bmp.height/2;
 			return base;
 		}
 		
