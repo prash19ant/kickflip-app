@@ -12,18 +12,15 @@ package kickflip.app
 
 	public class AppGlobal extends EventDispatcher
 	{
-		public static var AdminDebug:Boolean = true;
-		public static var PathConfig:String = "config.xml";
+		public static const PATH_CONFIG:String = "config.xml";
 		public static const VERSION:String = "0.0.2";
-		private static var DEFAULT_URL_SERVER:String = "http://localhost/";
-		public static var URL_SERVER:String = null;
-		public static var DataServiceEndPoint:String = "";
+
 		public static var backgroundImagePath:String = "images/background.jpg";
-		public static var MEDIA_SERVER_RMTP:String = "rtmp://172.17.195.149:2037/MediaTriggerService/";
-		public static var DEFAULT_STREAM_NAME:String = "medialive";
+		public static const MEDIA_SERVER_RMTP:String = "rtmp://172.17.195.149:2037/MediaTriggerService/";
+		public static const DEFAULT_STREAM_NAME:String = "medialive";
 		
-		public static const DEFAULT_WIDTH:uint = 700;
-		public static const DEFAULT_HEIGHT:uint = 400;
+		public static var defaultWidth:uint = 700;
+		public static var defaultHeight:uint = 400;
 		public static const FONT_TYPE:String = "Arial";
 
 		public var onReady:Signal = new Signal();
@@ -50,9 +47,6 @@ package kickflip.app
 		
 		private function appConfigReady():void
 		{
-			var currentServer:String = URL_SERVER != null ? URL_SERVER : DEFAULT_URL_SERVER;
-			DataServiceEndPoint = currentServer;
-
 			onReady.dispatch();
 		}
 

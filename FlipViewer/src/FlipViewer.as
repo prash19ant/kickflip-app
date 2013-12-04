@@ -41,8 +41,8 @@ package
 		{
 			var mainScreen:Screen = Screen.mainScreen;
 			var screenBounds:Rectangle = mainScreen.visibleBounds;
-			stage.nativeWindow.x = screenBounds.width/2 - AppGlobal.DEFAULT_WIDTH/2;
-			stage.nativeWindow.y = screenBounds.height/2 - AppGlobal.DEFAULT_HEIGHT/2;
+			stage.nativeWindow.x = screenBounds.width/2 - AppGlobal.defaultWidth/2;
+			stage.nativeWindow.y = screenBounds.height/2 - AppGlobal.defaultHeight/2;
 		}
 	}
 }
