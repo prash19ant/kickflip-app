@@ -2,6 +2,7 @@ package kickflip.cam.control
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.filters.DropShadowFilter;
 	import flash.media.Camera;
 	import flash.media.Video;
 	import flash.net.NetStream;
@@ -56,6 +57,8 @@ package kickflip.cam.control
 			video.attachCamera(camera);
 			video.width = appWidth;
 			video.height = appHeight;
+			var filterD:DropShadowFilter = new DropShadowFilter(0, 60, 0x000000, 1, 10, 10, 1, 3, false, false, false);
+			video.filters = [filterD];
 			addChild(video);
 			
 			publish();
