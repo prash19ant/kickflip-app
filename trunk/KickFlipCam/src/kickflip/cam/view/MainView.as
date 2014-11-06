@@ -12,14 +12,13 @@ package kickflip.cam.view
 		public function MainView()
 		{
 			super();
-			mediator = new MainViewMediator(this);
 			addEventListener(Event.ADDED_TO_STAGE, initStage);
 		}
 		
 		private function initStage(evt:Event):void
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, initStage);
-			mediator.init();
+			mediator = new MainViewMediator(this);
 		}
 	}
 }

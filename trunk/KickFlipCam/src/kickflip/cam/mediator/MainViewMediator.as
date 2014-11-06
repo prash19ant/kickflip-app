@@ -1,6 +1,7 @@
 package kickflip.cam.mediator
 {
 	import flash.events.Event;
+	import flash.utils.Dictionary;
 	
 	import kickflip.cam.common.ViewConstant;
 	import kickflip.cam.view.HomeView;
@@ -14,13 +15,24 @@ package kickflip.cam.mediator
 		private var homeView:HomeView;
 		private var watcherView:WatcherView;
 		private var publisherView:PublisherView;
+		private var actionDictionary:Dictionary;
 
 		public function MainViewMediator(view:MainView)
 		{
 			this.view = view;
+			setActionDictionary();
+			init();
 		}
 		
-		public function init():void
+		private function setActionDictionary():void
+		{
+			actionDictionary = new Dictionary();
+			actionDictionary[ViewConstant.HOME_MENU] = goHome;
+			actionDictionary[ViewConstant.WATCHER_MENU] = goWatcher;
+			actionDictionary[ViewConstant.PUBLISHER_MENU] = goPublisher;
+		}
+
+		private function init():void
 		{
 			goHome();
 			view.stage.addEventListener(Event.RESIZE, resizeHandler);
@@ -33,29 +45,9 @@ package kickflip.cam.mediator
 		
 		private function menuHandler(item:String):void
 		{
-			switch(item)
-			{
-				case ViewConstant.HOME_MENU:
-				{
-					goHome();
-					break;
-				}
-				case ViewConstant.WATCHER_MENU:
-				{
-					goWatcher();
-					break;
-				}
-				case ViewConstant.PUBLISHER_MENU:
-				{
-					goPublisher();
-					break;
-				}
-					
-				default:
-				{
-					break;
-				}
-			}
+			if(!actionDictionary.hasOwnProperty(item))
+				return;
+			actionDictionary[item]();
 		}
 		
 		private function goHome():void

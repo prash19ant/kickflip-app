@@ -1,6 +1,7 @@
 package flipviw.viw.mediator
 {
 	import flash.events.Event;
+	import flash.utils.Dictionary;
 	
 	import flipviw.viw.view.HomeView;
 	import flipviw.viw.view.MainView;
@@ -13,13 +14,23 @@ package flipviw.viw.mediator
 		public var view:MainView;
 		private var homeView:HomeView;
 		private var playView:PlayView;
+		private var actionDictionary:Dictionary;
 
 		public function MainViewMediator(view:MainView)
 		{
 			this.view = view;
+			setActionDictionary();
+			init();
 		}
-		
-		public function init():void
+			
+		private function setActionDictionary():void
+		{
+			actionDictionary = new Dictionary();
+			actionDictionary[View.HOME_MENU] = goHome;
+			actionDictionary[View.PLAY_MENU] = goPlay;
+		}
+
+		private function init():void
 		{
 			goHome();
 			view.stage.addEventListener(Event.RESIZE, resizeHandler);
@@ -32,24 +43,9 @@ package flipviw.viw.mediator
 		
 		private function menuHandler(item:String):void
 		{
-			switch(item)
-			{
-				case View.HOME_MENU:
-				{
-					goHome();
-					break;
-				}
-				case View.PLAY_MENU:
-				{
-					goPlay();
-					break;
-				}
-					
-				default:
-				{
-					break;
-				}
-			}
+			if(!actionDictionary.hasOwnProperty(item))
+				return;
+			actionDictionary[item]();
 		}
 		
 		private function goHome():void
