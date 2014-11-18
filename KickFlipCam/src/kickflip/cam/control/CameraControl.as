@@ -77,20 +77,12 @@ package kickflip.cam.control
 			}
 		}
 		
-		private function unpublish():void
-		{
-			try
-			{
-				netStream.close();
-			} catch(err:Error)
-			{
-				trace("CameraControl.unpublish.error netStream probably not open.");
-			}
-		}
-		
 		public function dispose():void
 		{
-			unpublish();
+			if(netStream != null)
+				netStream.close();
+			if(video != null)
+				removeChild(video);
 		}
 	}
 }

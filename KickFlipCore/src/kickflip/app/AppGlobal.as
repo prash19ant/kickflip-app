@@ -15,7 +15,7 @@ package kickflip.app
 		public static const PATH_CONFIG:String = "config.xml";
 		public static const VERSION:String = "0.0.2";
 
-		public static const MEDIA_SERVER_RMTP:String = "rtmp://localhost:1935/VideoRecording/";
+		public static const MEDIA_SERVER_RMTP:String = "rtmp://localhost:1935/Vootoo/";
 		public static const DEFAULT_STREAM_NAME:String = "medialive";
 		
 		public static var defaultWidth:uint = 700;

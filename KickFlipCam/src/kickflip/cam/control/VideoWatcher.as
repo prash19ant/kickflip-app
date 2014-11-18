@@ -51,8 +51,10 @@ package kickflip.cam.control
 
 		public function dispose():void
 		{
-			netStream.close();
-			removeChild(video);
+			if(netStream != null)
+				netStream.close();
+			if(video != null)
+				removeChild(video);
 		}
 	}
 }
